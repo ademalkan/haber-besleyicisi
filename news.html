@@ -1,0 +1,64 @@
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="FeedEk.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="news">
+            <h3>BBC News</h3>
+            <div id="bbc"></div>
+        </div>     
+        <div class="news">
+            <h3>Euronews</h3>
+            <div id="euro"></div>
+        </div>     
+        <div class="news">
+            <h3>CNN News</h3>
+            <div id="cnn"></div>
+        </div>
+    </div>
+
+</body>
+<style type="text/css">
+    body {
+        background-color: #0c0c0c;
+    }
+    #container {
+        position: absolute;
+        left: 20vw;
+    }
+    #container > div {
+        width: 20vw;
+        float: left;
+        background-color: #fefefe;
+
+    }
+    #container > div > h3{
+        text-align: center;
+        border-bottom: 1px solid black;
+    }
+</style>
+<script type="text/javascript">
+    $('#bbc').FeedEk({
+         FeedUrl:'http://feeds.bbc.co.uk/turkish/index.xml',
+        MaxCount: '3'
+    }) 
+    $('#euro').FeedEk({
+         FeedUrl:'https://www.eurotopics.net/export/tr/rss.xml',
+        MaxCount: '3'
+    }) 
+    $('#cnn').FeedEk({
+         FeedUrl:'https://www.cnnturk.com/feed/rss/all/news',
+        MaxCount: '3'
+    })
+</script>
+</html>
